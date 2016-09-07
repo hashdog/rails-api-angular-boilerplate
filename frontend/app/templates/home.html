@@ -1,0 +1,29 @@
+<div id="login" ng-init="init()">
+  <div class="row">
+    <form class="form-inline" ng-submit="addTask()">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" placeholder="title" ng-model="task.title" required/>
+          <button id="add" type="submit" class="btn btn-default">Add</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <td>TODO</td> <td>Actions</td>
+          </thead>
+          <tbody>
+            <tr class="panel" ng-repeat="(i, task) in tasks">
+              <td>{{ task.title }}</td> <td><a href="#" ng-click="removeTask(i)" class="btn btn-xs btn-danger">x</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
